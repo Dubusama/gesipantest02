@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+  <head>
+  </head>
+  <body>
+    <p>
+       <div class="write_form">
+        <form id="writeAction" action="/boards" method="post">
+            <input type="text" class="inputSubject" id="addContentSubject" name="addContentSubject" placeholder="제목">
+            <input type="text" class="inputWriter" id="addContentWriter" name="addContentWriter" placeholder="작성자">
+            <input type="password" class="inputPassword" id="addContentPassword" name="addContentPassword" placeholder="비밀번호">
+            <textarea class="textContents" id="addContents" name="addContents" rows="20" cols="80"></textarea>
+        </form>
+        <div id = "new" class="addBtngroup">
+            <a onclick="submitContents('add');"><div>SUBMIT</div></a>
+            <a onclick="cancelWriteForm('cancel');"><div>CANCEL</div></a>
+        </div>
+    </div>
+    </p>
+  </body>
+</html>

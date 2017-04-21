@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <script language="javascript">
+        function displayWriteForm() {
+            window.open('/newArticle','pop', 'menubar=no,status=no,scrollbars=no,resizable=no ,width=500,height=300,top=50,left=50');
+        }
+    </script>
+  </head>
+  <body>
+    <p>
+        <table>
+                <tr>
+                    <td>No.</td>
+                    <td>Title</td>
+                    <td>Writer</td>
+                    <td>Date</td>
+                    <td>Count</td>
+                </tr>
+        <%if(contents.length>0){%>
+                <%var i = 0;%>
+                <%contents.forEach(function(item){%>
+                <%i++;%>
+                <tr>
+                    <td class="number"><%=i%></td>
+                    <td class="title"><a href="/boards/view?id=<%=item._id%>"><%=item.title%></a></td>
+                    <td class="writer"><%=item.writer%></td>
+                    <td class="date"><%=dateFormatChange(item.date)%></td>
+                    <td class="cnt"><%=item.count%></td>
+                </tr>
+                <%})%>
+                <%} else {%>
+                <tr>
+                    <td colspan="5">게시물이 없습니다.</td>
+                </tr>
+        <%}%>
+        </table>
+    </p>
+
+    <p>
+        <a onclick="javascript:displayWriteForm();"><div class="write_btn"><button> 새 글 </button></div></a>
+    </p>
+  </body>
+</html>
